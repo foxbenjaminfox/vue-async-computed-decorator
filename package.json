@@ -1,0 +1,52 @@
+{
+  "name": "vue-async-computed-decorator",
+  "version": "0.0.1",
+  "description": "A vue-class-component decorator for vue-async-computed",
+  "module": "src/index.js",
+  "scripts": {
+    "check": "npm run lint -s && npm run test -s",
+    "lint": "eslint src",
+    "prepublishOnly": "npm run -s check",
+    "test": "parcel build test/index.js --out-dir test/dist && node test/dist/index.js | tspec"
+  },
+  "author": "Benjamin Fox <foxbenjaminfox@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vue-async-computed": "^3.8.1",
+    "vue-class-component": "^7.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/foxbenjaminfox/vue-async-computed-decorator/issues"
+  },
+  "homepage": "https://github.com/foxbenjaminfox/vue-async-computed-decorator#readme",
+  "keywords": [
+    "vue",
+    "data",
+    "async",
+    "computed",
+    "computed data",
+    "decorator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foxbenjaminfox/vue-async-computed-decorator.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "parcel": "^1.12.4",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.12.1",
+    "vue": "^2.6.11"
+  },
+  "peerDependencies": {
+    "vue": "~2"
+  }
+}

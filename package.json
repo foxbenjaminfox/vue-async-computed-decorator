@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "A vue-class-component decorator for vue-async-computed",
   "module": "src/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "check": "npm run lint -s && npm run test -s",
     "lint": "eslint src",

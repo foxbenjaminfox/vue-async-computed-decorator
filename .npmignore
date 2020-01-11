@@ -1,0 +1,8 @@
+.cache/
+node_modules/
+src/
+test/
+.babelrc
+.travis.yml
+tsconfig.json
+tslint.json

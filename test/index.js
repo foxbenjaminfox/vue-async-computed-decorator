@@ -1,6 +1,6 @@
 import test from 'tape'
 import AsyncComputedPlugin from 'vue-async-computed'
-import AsyncComputed from '../src/index.js'
+import AsyncComputed from '../dist/index.js'
 import Component from 'vue-class-component'
 import Vue from 'vue'
 

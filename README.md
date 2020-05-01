@@ -27,9 +27,12 @@
   </a>
 </p>
 
-This package provides a [`vue-class-component`](https://github.com/vuejs/vue-class-component/) decorator for [`vue-async-computed`](https://github.com/foxbenjaminfox/vue-async-computed). This allows you to use `vue-async-computed` in your class-style Vie components easily.
+This package provides two [`vue-class-component`](https://github.com/vuejs/vue-class-component/) decorators for [`vue-async-computed`](https://github.com/foxbenjaminfox/vue-async-computed). This allows you to use `vue-async-computed` in your class-style Vue components easily.
 
-## Usage Example:
+## First decorator usage Example:
+
+The first decorator use the standard Async compute object definition directly inside the your class. 
+This can result in strange typing resolution in your methods. 
 
 ```javascript
 import Vue from 'vue'
@@ -47,6 +50,33 @@ class MyComponent extends Vue {
   }
 }
 ```
+
+## Second decorator usage Example:
+
+
+The second decorator move Async computed object definition inside the decorator, your type resolution will not "see" the async computed object declaration but will see only the result type. 
+
+```javascript
+import Vue from 'vue'
+import AsyncComputedPlugin from 'vue-async-computed'
+import {Async} from 'vue-async-computed-decorator'
+import Component from 'vue-class-component'
+
+Vue.use(AsyncComputedPlugin)
+
+@Component
+class MyComponent extends Vue {
+  @Async({
+    get(){ /* async method */ }, 
+    /* ... options ... */
+  })
+  property: <myType>
+}
+```
+
+
+
+
 
 ## Credits
 

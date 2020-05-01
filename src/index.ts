@@ -35,13 +35,13 @@ export interface IAsyncComputedOptions<TResult> {
 }
 
 
-interface IAsyncComputedOptionsExtended<T> extends IAsyncComputedOptionsExtended<T> {
+interface IAsyncComputedOptionsExtended<T> extends IAsyncComputedOptions<T> {
   get: () => Promise<T>
 }
 
 export const Async = <T>(options: IAsyncComputedOptionsExtended<T>) => {
-  return (target: Vue, key: string) => {
-    createDecorator((componentOptions, k) => {
+  return (target: any, key: string) => {
+    createDecorator((componentOptions: any, k: any) => {
       let async = (componentOptions.asyncComputed || ((componentOptions.asyncComputed = {}) as any));
       async[k] = options;
     })(target, key)
@@ -50,7 +50,7 @@ export const Async = <T>(options: IAsyncComputedOptionsExtended<T>) => {
 
 export default function AsyncComputed<TResult>(
   computedOptions?: IAsyncComputedOptions<TResult>): VueDecorator {
-  return createDecorator((options, key) => {
+  return createDecorator((options: any, key: any) => {
     options.asyncComputed = options.asyncComputed || {};
 
     if (options.methods === undefined) {

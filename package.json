@@ -1,6 +1,6 @@
 {
   "name": "vue-async-computed-decorator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A vue-class-component decorator for vue-async-computed",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

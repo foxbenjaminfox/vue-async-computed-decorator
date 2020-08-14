@@ -41,7 +41,7 @@ Vue.use(AsyncComputedPlugin)
 
 @Component
 class MyComponent extends Vue {
-  @AsyncComputed
+  @AsyncComputed()
   async someComputedProp() {
     ...
   }

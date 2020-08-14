@@ -14,7 +14,7 @@
   "author": "Benjamin Fox <foxbenjaminfox@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "vue-async-computed": "^3.8.2",
+    "vue-async-computed": "^3.8.3",
     "vue-class-component": "^7.2.5"
   },
   "bugs": {

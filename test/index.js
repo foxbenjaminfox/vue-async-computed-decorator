@@ -48,3 +48,27 @@ test('The AsyncComputed decorator allows options on async computed properties', 
     })
   })
 })
+
+
+test('The AsyncComputed decorator can be applied to getter computed properties', t => {
+  t.plan(4)
+
+  @Component()
+  class TestComponent extends Vue {
+    @AsyncComputed({default: 0})
+    get shouldBeComputed () {
+      return new Promise(resolve => {
+        resolve(1)
+      })
+    }
+  }
+  const vm = new TestComponent()
+
+  t.equal(vm.shouldBeComputed, 0)
+  t.equal(vm.$asyncComputed.shouldBeComputed.state, 'updating')
+
+  Vue.nextTick(() => {
+    t.equal(vm.$asyncComputed.shouldBeComputed.state, 'success')
+    t.equal(vm.shouldBeComputed, 1)
+  })
+})

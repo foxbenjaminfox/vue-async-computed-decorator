@@ -8,6 +8,7 @@
     "check": "npm run build && npm run lint -s && npm run test -s",
     "build": "tsc",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run -s check",
     "test": "npm run build && parcel build test/index.js --out-dir test/dist && node test/dist/index.js | tspec"
   },

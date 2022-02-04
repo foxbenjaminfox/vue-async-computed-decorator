@@ -14,7 +14,7 @@ export default function AsyncComputed<TResult>(
             method = options.methods[key]
             delete options.methods[key];
         } else if (options.computed?.[key]) {
-            method = options.computed[key]
+            method = (options.computed[key] as IAsyncComputedValue<TResult>).get
             delete options.computed[key];
         } else {
             throw new Error(`AsyncComputed ${key} is not a method or computed property`);

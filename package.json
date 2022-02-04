@@ -8,6 +8,7 @@
     "check": "npm run build && npm run lint -s && npm run test -s",
     "build": "tsc",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run -s check",
     "test": "npm run build && parcel build test/index.js --out-dir test/dist && node test/dist/index.js | tspec"
   },
@@ -34,7 +35,8 @@
     "url": "git+https://github.com/foxbenjaminfox/vue-async-computed-decorator.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.17.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-proposal-decorators": "^7.10.5",
     "@babel/plugin-transform-runtime": "^7.11.0",
     "parcel": "^1.12.4",
